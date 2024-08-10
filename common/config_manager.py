@@ -6,7 +6,7 @@ class ConfigManager:
 
     def get_driver_options(self):
         user_data_dir = r"C:\Users\user\AppData\Local\Google\Chrome\User Data"
-        profile_dir = "Profile 1"
+        profile_dir = "Profile 2"
         chrome_options = Options()
         chrome_options.add_argument("--disable-gpu")
         chrome_options.add_argument("--no-sandbox")
