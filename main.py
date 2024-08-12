@@ -24,7 +24,7 @@ if __name__ == "__main__":
         try:
             db_manager = DatabaseManager_trendyol(mysql_config)
             db_manager.connect()
-            scraper = ProductScraper_trendyol(driver_path, trendyol_base_url, trendyol_output_csv, db_manager)
+            scraper = ProductScraper_trendyol(driver_path, trendyol_base_url, trendyol_output_csv, 20, db_manager)
             scraper.run()
         finally:
             db_manager.disconnect()

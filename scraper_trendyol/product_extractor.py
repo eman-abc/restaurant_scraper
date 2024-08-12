@@ -8,7 +8,7 @@ class ProductExtractor:
         self.product_urls = []  # List to store product URLs
 
     def extract_products(self):
-        elements = self.driver.find_elements(By.CSS_SELECTOR, '[class="p-card-wrppr with-campaign-view add-to-bs-card"] ')
+        elements = self.driver.find_elements(By.CSS_SELECTOR, '[class="p-card-wrppr with-campaign-view add-to-bs-card"]')
         products = []
         for element in elements:
             try:
@@ -18,7 +18,6 @@ class ProductExtractor:
                     products.append(product_data)
                     self.product_urls.append(product_data['product_url'])  # store product URL
                     ProductPrinter.print_product_data(product_data)
-                break #edit here
             except Exception as e:
                 print(f"Error extracting product data: {e}")
                 continue
@@ -27,7 +26,7 @@ class ProductExtractor:
     def extract_product_data(self, soup):
         try:
             # Print the soup to debug and verify HTML structure
-            print(soup.prettify())
+            # print(soup.prettify())
 
             # Extract title and brand name
             title_element = soup.find('span', class_='prdct-desc-cntnr-name hasRatings')
@@ -87,7 +86,9 @@ class ProductExtractor:
                 'badges': badge_texts,
             }
 
+            print(product_data)
             return product_data
+            
 
         except Exception as e:
             print(f"Error extracting data: {e}")
