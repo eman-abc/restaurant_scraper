@@ -1,5 +1,5 @@
-from common.webdriver_manager import WebDriverManager
-from common.config_manager import ConfigManager
+from common_restaurant.webdriver_manager import WebDriverManager
+from common_restaurant.config_manager import ConfigManager
 from .product_extractor import ProductExtractor
 from selenium.common.exceptions import TimeoutException
 import csv

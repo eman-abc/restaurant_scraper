@@ -22,7 +22,7 @@ class DatabaseManager:
 
     def insert_product_data(self, product_data):
         insert_query = """
-        INSERT INTO food_items (
+        INSERT INTO restaurant (
             name, description, image_url, price
         ) VALUES (
             %s, %s, %s, %s

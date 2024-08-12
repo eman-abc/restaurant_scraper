@@ -1,5 +1,5 @@
-from common.product_printer import ProductPrinter
-from common.html_parser import HtmlParser
+from common_restaurant.product_printer import ProductPrinter
+from common_restaurant.html_parser import HtmlParser
 from selenium.webdriver.common.by import By
 
 class ProductExtractor:
