@@ -7,13 +7,13 @@ class ProductExtractor:
         self.driver = driver
         self.product_urls = []  # List to store product URLs
 
-    def extract_products(self):
+    def extract_products(self, category):
         elements = self.driver.find_elements(By.CSS_SELECTOR, '[class="p-card-wrppr with-campaign-view add-to-bs-card"]')
         products = []
         for element in elements:
             try:
                 soup = HtmlParser.parse_html(element)
-                product_data = self.extract_product_data(soup)
+                product_data = self.extract_product_data(soup, category)
                 if product_data:
                     products.append(product_data)
                     self.product_urls.append(product_data['product_url'])  # store product URL
@@ -23,7 +23,7 @@ class ProductExtractor:
                 continue
         return products
 
-    def extract_product_data(self, soup):
+    def extract_product_data(self, soup, category):
         try:
             # Print the soup to debug and verify HTML structure
             # print(soup.prettify())
@@ -75,6 +75,7 @@ class ProductExtractor:
 
             product_data = {
                 'title': title,
+                'category': category,
                 'brand_name': brand_name,
                 'short_description': short_description,
                 'product_url': full_product_url,

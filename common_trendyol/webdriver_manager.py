@@ -34,12 +34,12 @@ class WebDriverManager:
             EC.presence_of_element_located((By.CSS_SELECTOR, '[class^="prdct-cntnr-wrppr"]'))
         )
         
-        WebDriverWait(self.driver, 40).until(
-        EC.text_to_be_present_in_element(
-            (By.CSS_SELECTOR, '[class="tab__link tab__link-active"]'),
-            'ALL PRODUCTS'  
-        )
-        )
+        # WebDriverWait(self.driver, 40).until(
+        # EC.text_to_be_present_in_element(
+        #     (By.CSS_SELECTOR, '[class="tab__link tab__link-active"]'),
+        #     'ALL PRODUCTS'  
+        # )
+        # )
 
     def close_driver(self):
         if self.driver:
